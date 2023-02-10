@@ -12,7 +12,7 @@
 <meta name="author" content="Stephanie Tanis" />
 
 
-<title>Palmer Penguins</title>
+<title>data.Rmd</title>
 
 <script src="site_libs/header-attrs-2.20/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -337,18 +337,13 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">Palmer Penguins</h1>
+<h1 class="title toc-ignore">data.Rmd</h1>
 <h4 class="author">Stephanie Tanis</h4>
 <h4 class="date">2/10/2023</h4>
 
 </div>
 
 
-<p><img src="https://files.worldwildlife.org/wwfcmsprod/images/HERO_Penguins_Antarctica/story_full_width/9de57cats0_Medium_WW267491.jpg" /></p>
-<div id="data" class="section level2">
-<h2>Data</h2>
-<p>For this lab, I used ggplot to visually explore patterns in morphological traits in three different species of penguins. This data was collected and made available by Dr. Kristen Gorman and the Palmer Station, Antarctica LTER and were compiled by Dr. Allison Horst and colleagues.</p>
-<p><br></p>
 <div id="visualizing-the-dataset" class="section level4">
 <h4>Visualizing the dataset</h4>
 <pre class="r"><code>dim(penguins)</code></pre>
@@ -360,28 +355,27 @@ div.tocify {
 ## [7] &quot;sex&quot;               &quot;year&quot;</code></pre>
 <pre class="r"><code>penguins_no_na &lt;- penguins %&gt;% filter(!is.na(sex))</code></pre>
 </div>
-</div>
 <div id="single-trait-distribution" class="section level2">
 <h2>Single trait distribution</h2>
 <p><br></p>
-<p><img src="penguins_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p><img src="data_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
 <p><br></p>
-<p><img src="penguins_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p><img src="data_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 <p><br></p>
-<p><img src="penguins_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p><img src="data_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
 </div>
 <div id="relationship-between-multiple-traits" class="section level2">
 <h2>Relationship between multiple traits</h2>
 <p><br></p>
-<p><img src="penguins_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p><img src="data_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
 <p><br></p>
-<p><img src="penguins_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p><img src="data_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
 </div>
 <div id="sexual-dimorphism" class="section level2">
 <h2>Sexual dimorphism</h2>
-<p><img src="penguins_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p><img src="data_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
 <p><br></p>
-<p><img src="penguins_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p><img src="data_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
 </div>
 
 

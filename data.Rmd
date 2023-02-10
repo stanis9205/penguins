@@ -1,0 +1,103 @@
+---
+title: "data.Rmd"
+author: "Stephanie Tanis"
+date: "2/10/2023"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+#### Visualizing the dataset
+
+```{r}
+dim(penguins)
+colnames(penguins)
+
+penguins_no_na <- penguins %>% filter(!is.na(sex))
+```
+
+
+## Single trait distribution
+
+<br> 
+
+```{r, echo = FALSE}
+ggplot(data = penguins) + 
+  geom_density(mapping = aes(x = bill_length_mm, fill = species), alpha = 0.75) +
+  ggtitle("Bill Lengths for Three Penguin Species") + 
+  theme(plot.title = element_text(size = 20, face = "bold")) +
+  xlab("Bill Length (mm)") +
+  ylab("Density")
+```
+
+<br>
+
+```{r, echo = FALSE}
+ggplot(data = penguins) + 
+  geom_histogram(mapping = aes(x = bill_length_mm, fill = species), alpha = 0.75, binwidth=0.5) +
+  ggtitle("Bill Lengths for Three Penguin Species") + 
+  theme(plot.title = element_text(size = 20, face = "bold")) +
+  xlab("Bill Length (mm)") +
+  ylab("Number of Penguins")
+```
+
+<br>
+
+```{r, echo = FALSE}
+ggplot(data = penguins) + 
+  geom_violin(mapping = aes(x = species, y = bill_length_mm, fill = species), alpha = 0.75) +
+  ggtitle("Bill Lengths for Three Penguin Species") + 
+  theme(plot.title = element_text(size = 20, face = "bold", lineheight = 0.9)) +
+  xlab("Bill Length (mm)") +
+  ylab("Number of Penguins")
+```
+
+## Relationship between multiple traits
+
+<br> 
+
+```{r, echo = FALSE}
+ggplot(data = penguins) + 
+  geom_point(mapping = aes(x = body_mass_g, y = flipper_length_mm, color = species), size = 3) +
+  ggtitle("Body Mass and Flipper Length Relationship for Three Penguin Species") + 
+  theme(plot.title = element_text(size = 11, face = "bold")) +
+  xlab("Bill Length (mm)") +
+  ylab("Density")
+```
+
+<br> 
+
+```{r, echo = FALSE}
+ggplot(data = penguins_no_na) + 
+  geom_point(mapping = aes(x = body_mass_g, y = flipper_length_mm, color = sex, shape = species), size = 3) +
+  ggtitle("Body Mass and Flipper Length Relationship for both sexes of Three Penguin Species") + 
+  theme(plot.title = element_text(size = 11, face = "bold")) +
+  xlab("Bill Length (mm)") +
+  ylab("Density")
+```
+
+## Sexual dimorphism
+
+```{r, echo = FALSE}
+ggplot(data = penguins_no_na) + 
+  geom_point(mapping = aes(x = bill_length_mm, y = bill_depth_mm, color = sex), size = 3) +
+  ggtitle("Body Mass and Flipper Length Relationship for both sexes of Three Penguin Species") + 
+  theme(plot.title = element_text(size = 11, face = "bold")) +
+  xlab("Bill Length (mm)") +
+  ylab("Density") +
+  facet_wrap(~species)
+```
+
+<br>
+
+```{r, echo = FALSE}
+ggplot(data = penguins_no_na) + 
+  geom_point(mapping = aes(x = body_mass_g, y = flipper_length_mm, color = sex, shape = species), size = 3) +
+  ggtitle("Body Mass and Flipper Length Relationship for both sexes of Three Penguin Species") + 
+  theme(plot.title = element_text(size = 11, face = "bold")) +
+  xlab("Body Mass (g)") +
+  ylab("Density") +
+  facet_wrap(~species)
+```

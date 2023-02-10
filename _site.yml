@@ -1,0 +1,15 @@
+name: "Palmer Penguins"
+navbar:
+  title: "Palmer Penguins"
+  left:
+    - text: "Home"
+      href: index.html
+    - text: "Plots"
+      href: data.html
+output_dir: "."
+output:
+  html_document:
+    theme: cerulean
+    highlight: textmate
+    toc: true 
+    toc_float: true 
